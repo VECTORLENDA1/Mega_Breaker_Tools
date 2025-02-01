@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 450,
+  "experience": 27,
+  "group": "obscuridium",
+  "ingredient": {
+    "item": "megabreakertools:raw_obscuridium_block"
+  },
+  "result": {
+    "id": "megabreakertools:obscuridium_block"
+  }
+}

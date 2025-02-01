@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 450,
+  "experience": 9,
+  "group": "nexalite",
+  "ingredient": {
+    "item": "megabreakertools:raw_nexalite_block"
+  },
+  "result": {
+    "id": "megabreakertools:nexalite_block"
+  }
+}
