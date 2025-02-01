@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc" ,
+  "key": {
+    "#": {
+      "item": "megabreakertools:raw_ignithra"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+    ],
+      "result": {
+        "count": 1,
+        "id": "megabreakertools:raw_ignithra_block"
+      }
+}
