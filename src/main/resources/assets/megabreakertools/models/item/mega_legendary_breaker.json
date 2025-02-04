@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-   "layer0": "megabreakertools:item/bigatomic_breaker"
+   "layer0": "megabreakertools:item/mega_legendary_breaker"
   }
 }

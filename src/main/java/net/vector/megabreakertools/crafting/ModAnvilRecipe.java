@@ -26,29 +26,29 @@ public class ModAnvilRecipe {
     }
 
     private void registerRecipes() {
-        // Registra as receitas
-        registerRecipe(Items.DIRT, ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.BIG_SIMPLE_BREAKER.get()), 15, 5);
+        // Exemplo de registro de receitas
+        registerRecipe(Items.DIRT, ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_SIMPLE_BREAKER.get()), 25, 5);
 
-        registerRecipe(Items.STONE, ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.ADVANCE_BREAKER.get()), 40, 1);
-        registerRecipe(Items.DIRT, ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.BIG_ADVANCE_BREAKER.get()), 40, 1);
-        registerRecipe(Items.DIRT, ModItems.BIG_SIMPLE_BREAKER.get(), new ItemStack(ModItems.BIG_ADVANCE_BREAKER.get()), 40, 1);
+        registerRecipe(Items.STONE, ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.ADVANCE_BREAKER.get()), 50, 1);
+        registerRecipe(Items.DIRT, ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 1);
+        registerRecipe(Items.DIRT, ModItems.MEGA_SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 1);
 
-        registerRecipe(Items.STONE, ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.ULTRA_BREAKER.get()), 50, 1);
-        registerRecipe(Items.DIRT, ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.BIG_ULTRA_BREAKER.get()), 50, 1);
-        registerRecipe(Items.DIRT, ModItems.BIG_ADVANCE_BREAKER.get(), new ItemStack(ModItems.BIG_ULTRA_BREAKER.get()), 50, 1);
+        registerRecipe(Items.STONE, ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.ULTRA_BREAKER.get()), 60, 1);
+        registerRecipe(Items.DIRT, ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 1);
+        registerRecipe(Items.DIRT, ModItems.MEGA_ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 1);
 
-        registerRecipe(Items.STONE, ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.ULTIMATE_BREAKER.get()), 60, 1);
-        registerRecipe(Items.DIRT, ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.BIG_ULTIMATE_BREAKER.get()), 60, 1);
-        registerRecipe(Items.DIRT, ModItems.BIG_ULTRA_BREAKER.get(), new ItemStack(ModItems.BIG_ULTIMATE_BREAKER.get()), 60, 1);
+        registerRecipe(Items.STONE, ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.ULTIMATE_BREAKER.get()), 70, 1);
+        registerRecipe(Items.DIRT, ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 1);
+        registerRecipe(Items.DIRT, ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 1);
 
-        registerRecipe(Items.STONE, ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.LEGENDARY_BREAKER.get()), 70, 1);
-        registerRecipe(Items.DIRT, ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.BIG_LEGENDARY_BREAKER.get()), 70, 1);
-        registerRecipe(Items.DIRT, ModItems.BIG_ULTIMATE_BREAKER.get(), new ItemStack(ModItems.BIG_LEGENDARY_BREAKER.get()), 70, 1);
+        registerRecipe(Items.STONE, ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.LEGENDARY_BREAKER.get()), 80, 1);
+        registerRecipe(Items.DIRT, ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 1);
+        registerRecipe(Items.DIRT, ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 1);
 
-        registerRecipe(Items.STONE, ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.ATOMIC_BREAKER.get()), 80, 1);
-        registerRecipe(Items.DIRT, ModItems.ATOMIC_BREAKER.get(), new ItemStack(ModItems.BIG_ATOMIC_BREAKER.get()), 80, 1);
-        registerRecipe(Items.DIRT, ModItems.BIG_LEGENDARY_BREAKER.get(), new ItemStack(ModItems.BIG_ATOMIC_BREAKER.get()), 80, 1);
-        // Adicione mais receitas aqui...
+        registerRecipe(Items.STONE, ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.ATOMIC_BREAKER.get()), 90, 1);
+        registerRecipe(Items.DIRT, ModItems.ATOMIC_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 1);
+        registerRecipe(Items.DIRT, ModItems.MEGA_LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 1);
+        // Outras receitas podem ser adicionadas aqui...
     }
 
     private void registerRecipe(Item leftItem, Item rightItem, ItemStack result, int cost, int materialCost) {
@@ -57,7 +57,7 @@ public class ModAnvilRecipe {
     }
 
     private String getItemKey(Item item) {
-        return BuiltInRegistries.ITEM.getKey(item).toString(); // Obtém o nome de registro do item
+        return BuiltInRegistries.ITEM.getKey(item).toString();
     }
 
     @SubscribeEvent
@@ -69,26 +69,31 @@ public class ModAnvilRecipe {
             return;
         }
 
-        // Verifica se há uma receita para os itens na bigorna
+        // Busca a receita com base nos itens inseridos na bigorna
         AnvilRecipe recipe = findRecipe(left.getItem(), right.getItem());
         if (recipe != null) {
-            int craftableAmount = Math.min(left.getCount(), right.getCount());
-            ItemStack result = recipe.getResult().copy();
-            result.setCount(craftableAmount);
+            // Verifica qual item é o material e qual é a ferramenta
+            boolean isLeftMaterial = left.getItem() == recipe.getLeftItem();
+            boolean isRightMaterial = right.getItem() == recipe.getRightItem();
 
+            // Determina qual pilha é o material e qual é a ferramenta
+            ItemStack materialStack = isLeftMaterial ? left : right;
+            ItemStack toolStack = isLeftMaterial ? right : left;
+
+            // Verifica se a quantidade de material é exatamente a necessária
+            if (materialStack.getCount() != recipe.getMaterialCost()) {
+                event.setOutput(ItemStack.EMPTY); // Cancela o craft se a quantidade não for exata
+                return;
+            }
+
+            // Define o resultado do craft
+            ItemStack result = recipe.getResult().copy();
             event.setOutput(result);
-            event.setCost(recipe.getCost() * craftableAmount);
-            event.setMaterialCost(recipe.getMaterialCost() * craftableAmount);
+            event.setCost(recipe.getCost());
+            event.setMaterialCost(recipe.getMaterialCost());
         } else {
             event.setOutput(ItemStack.EMPTY);
         }
-    }
-
-    private AnvilRecipe findRecipe(Item leftItem, Item rightItem) {
-        String key1 = getItemKey(leftItem) + "_" + getItemKey(rightItem);
-        String key2 = getItemKey(rightItem) + "_" + getItemKey(leftItem);
-
-        return RECIPES.getOrDefault(key1, RECIPES.get(key2));
     }
 
     @SubscribeEvent
@@ -100,13 +105,38 @@ public class ModAnvilRecipe {
         ItemStack leftStack = anvilContainer.getItem(0);
         ItemStack rightStack = anvilContainer.getItem(1);
 
-        if (!leftStack.isEmpty() && !rightStack.isEmpty()) {
-            int craftedAmount = output.getCount();
-            leftStack.shrink(craftedAmount);
-            rightStack.shrink(craftedAmount);
+        // Recupera a receita para determinar o consumo de materiais
+        AnvilRecipe recipe = findRecipe(leftStack.getItem(), rightStack.getItem());
+        if (recipe != null && !leftStack.isEmpty() && !rightStack.isEmpty()) {
+            // Verifica qual item é o material e qual é a ferramenta
+            boolean isLeftMaterial = leftStack.getItem() == recipe.getLeftItem();
+            boolean isRightMaterial = rightStack.getItem() == recipe.getRightItem();
+
+            // Determina qual pilha é o material e qual é a ferramenta
+            ItemStack materialStack = isLeftMaterial ? leftStack : rightStack;
+            ItemStack toolStack = isLeftMaterial ? rightStack : leftStack;
+
+            // Verifica se a quantidade de material é exatamente a necessária
+            if (materialStack.getCount() != recipe.getMaterialCost()) {
+                event.setCanceled(true); // Cancela o evento se a quantidade não for exata
+                return;
+            }
+
+            // Consome os itens
+            toolStack.shrink(1); // Consome 1 ferramenta
+            materialStack.shrink(recipe.getMaterialCost()); // Consome a quantidade exata de material
 
             anvilContainer.setItem(0, leftStack);
             anvilContainer.setItem(1, rightStack);
         }
     }
+
+    private AnvilRecipe findRecipe(Item leftItem, Item rightItem) {
+        String key1 = getItemKey(leftItem) + "_" + getItemKey(rightItem);
+        String key2 = getItemKey(rightItem) + "_" + getItemKey(leftItem);
+
+        return RECIPES.getOrDefault(key1, RECIPES.get(key2));
+    }
 }
+
+

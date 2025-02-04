@@ -61,17 +61,17 @@ public class ModCreativeModTabs {
 
                     //TOOLS
                     pOutput.accept(ModItems.SIMPLE_BREAKER.get());
-                    pOutput.accept(ModItems.BIG_SIMPLE_BREAKER.get());
+                    pOutput.accept(ModItems.MEGA_SIMPLE_BREAKER.get());
                     pOutput.accept(ModItems.ADVANCE_BREAKER.get());
-                    pOutput.accept(ModItems.BIG_ADVANCE_BREAKER.get());
+                    pOutput.accept(ModItems.MEGA_ADVANCE_BREAKER.get());
                     pOutput.accept(ModItems.ULTRA_BREAKER.get());
-                    pOutput.accept(ModItems.BIG_ULTRA_BREAKER.get());
+                    pOutput.accept(ModItems.MEGA_ULTRA_BREAKER.get());
                     pOutput.accept(ModItems.ULTIMATE_BREAKER.get());
-                    pOutput.accept(ModItems.BIG_ULTIMATE_BREAKER.get());
+                    pOutput.accept(ModItems.MEGA_ULTIMATE_BREAKER.get());
                     pOutput.accept(ModItems.LEGENDARY_BREAKER.get());
-                    pOutput.accept(ModItems.BIG_LEGENDARY_BREAKER.get());
+                    pOutput.accept(ModItems.MEGA_LEGENDARY_BREAKER.get());
                     pOutput.accept(ModItems.ATOMIC_BREAKER.get());
-                    pOutput.accept(ModItems.BIG_ATOMIC_BREAKER.get());
+                    pOutput.accept(ModItems.MEGA_ATOMIC_BREAKER.get());
 
             })
                 .build());
