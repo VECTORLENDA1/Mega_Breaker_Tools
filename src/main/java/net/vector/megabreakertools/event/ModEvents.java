@@ -114,6 +114,7 @@ public class ModEvents {
             HARVESTED_BLOCKS.removeAll(blocksToBreak);
         }
 
+        // MEGA ADVANCE BREAKER//
         if(mainHandItem.getItem() instanceof MegaAdvanceBreakerItem MegaAdvancebreaker && player instanceof ServerPlayer serverPlayer) {
             BlockPos initialBlockPos = event.getPos();
             if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
@@ -171,6 +172,7 @@ public class ModEvents {
             HARVESTED_BLOCKS.removeAll(blocksToBreak);
         }
 
+        // MEGA ULTRA BREAKER//
         if(mainHandItem.getItem() instanceof MegaUltraBreakerItem MegaUltrabreaker && player instanceof ServerPlayer serverPlayer) {
             BlockPos initialBlockPos = event.getPos();
             if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
@@ -228,6 +230,7 @@ public class ModEvents {
             HARVESTED_BLOCKS.removeAll(blocksToBreak);
         }
 
+        // MEGA ULTIMATE BREAKER//
         if(mainHandItem.getItem() instanceof MegaUltimateBreakerItem MegaUltimatebreaker && player instanceof ServerPlayer serverPlayer) {
             BlockPos initialBlockPos = event.getPos();
             if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
@@ -285,6 +288,7 @@ public class ModEvents {
             HARVESTED_BLOCKS.removeAll(blocksToBreak);
         }
 
+        // MEGA LEGENDARY BREAKER//
         if(mainHandItem.getItem() instanceof MegaLegendaryBreakerItem MegaLegendarybreaker && player instanceof ServerPlayer serverPlayer) {
             BlockPos initialBlockPos = event.getPos();
             if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
@@ -342,6 +346,7 @@ public class ModEvents {
             HARVESTED_BLOCKS.removeAll(blocksToBreak);
         }
 
+        // MEGA ATOMIC BREAKER//
         if(mainHandItem.getItem() instanceof MegaAtomicBreakerItem MegaAtomicbreaker && player instanceof ServerPlayer serverPlayer) {
             BlockPos initialBlockPos = event.getPos();
             if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
