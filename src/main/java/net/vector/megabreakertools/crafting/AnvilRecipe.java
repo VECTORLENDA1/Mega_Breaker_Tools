@@ -4,11 +4,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class AnvilRecipe {
-    private final Item leftItem;
-    private final Item rightItem;
-    private final ItemStack result;
-    private final int cost;
-    private final int materialCost;
+    public final Item leftItem;
+    public final Item rightItem;
+    public final ItemStack result;
+    public final int cost;
+    public final int materialCost;
 
     public AnvilRecipe(Item leftItem, Item rightItem, ItemStack result, int cost, int materialCost) {
         this.leftItem = leftItem;

@@ -14,27 +14,28 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.vector.megabreakertools.client.ScaledDrawable;
+import net.vector.megabreakertools.crafting.AnvilRecipe;
 import net.vector.megabreakertools.crafting.ModAnvilRecipe;
 import net.vector.megabreakertools.item.ModItems;
 import org.jetbrains.annotations.NotNull;
 
-public class AnvilRecipeCategory implements IRecipeCategory<ModAnvilRecipe> {
+public class AnvilRecipeCategory implements IRecipeCategory<AnvilRecipe> {
 
     public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath("megabreakertools", "anvil");
-    public static final RecipeType<ModAnvilRecipe> ANVIL_TYPE = new RecipeType<>(UID, ModAnvilRecipe.class);
-    public static final ResourceLocation TEXTURE =  ResourceLocation.fromNamespaceAndPath("megabreakertools", "textures/gui/anvil_gui.png");
+    public static final RecipeType<AnvilRecipe> ANVIL_TYPE = new RecipeType<>(UID, AnvilRecipe.class);
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("megabreakertools", "textures/gui/anvil_gui.png");
 
     private final IDrawable background;
     private final IDrawable icon;
 
     public AnvilRecipeCategory(IGuiHelper helper) {
-        IDrawable baseBackground = helper.createDrawable(TEXTURE, 0, 0, 125,38);
+        IDrawable baseBackground = helper.createDrawable(TEXTURE, 0, 0, 125, 38);
         this.background = new ScaledDrawable(baseBackground, 1f);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Items.ANVIL));
     }
 
     @Override
-    public RecipeType<ModAnvilRecipe> getRecipeType() {
+    public RecipeType<AnvilRecipe> getRecipeType() {
         return ANVIL_TYPE;
     }
 
@@ -54,10 +55,9 @@ public class AnvilRecipeCategory implements IRecipeCategory<ModAnvilRecipe> {
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, @NotNull ModAnvilRecipe recipe, @NotNull IFocusGroup focuses) {
-        //ADVANCE BREAKER
-        builder.addSlot(RecipeIngredientRole.INPUT, 5, 5).addItemStack(new ItemStack(Blocks.STONE)); // Slot esquerdo
-        builder.addSlot(RecipeIngredientRole.INPUT, 51, 5).addItemStack(new ItemStack(ModItems.SIMPLE_BREAKER.get())); // Slot direito
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 104, 5).addItemStack(new ItemStack(ModItems.ADVANCE_BREAKER.get())); // Slot de saída
+    public void setRecipe(IRecipeLayoutBuilder builder, @NotNull AnvilRecipe recipe, @NotNull IFocusGroup focuses) {
+        builder.addSlot(RecipeIngredientRole.INPUT, 5, 5).addItemStack(new ItemStack(recipe.getLeftItem()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 51, 5).addItemStack(new ItemStack(recipe.getRightItem()));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 104, 5).addItemStack(recipe.getResult());
     }
 }

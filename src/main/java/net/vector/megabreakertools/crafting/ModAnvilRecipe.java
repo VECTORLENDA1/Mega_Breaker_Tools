@@ -13,6 +13,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.vector.megabreakertools.item.ModItems;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +24,10 @@ public class ModAnvilRecipe {
     public ModAnvilRecipe() {
         MinecraftForge.EVENT_BUS.register(this);
         registerRecipes();
+    }
+
+    public static Collection<AnvilRecipe> getRecipes() {
+        return RECIPES.values();
     }
 
     private void registerRecipes() {
