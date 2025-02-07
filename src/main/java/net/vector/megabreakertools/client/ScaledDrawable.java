@@ -27,9 +27,7 @@ public class ScaledDrawable implements IDrawable {
     public void draw(GuiGraphics guiGraphics, int xOffset, int yOffset) {
         PoseStack poseStack = guiGraphics.pose();
         poseStack.pushPose();
-        // Aplica a escala no sistema de coordenadas
         poseStack.scale(scale, scale, scale);
-        // Ajusta os offsets para que o desenho ocorra na posição correta, considerando a escala
         original.draw(guiGraphics, (int) (xOffset / scale), (int) (yOffset / scale));
         poseStack.popPose();
     }
