@@ -12,11 +12,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 import net.vector.megabreakertools.client.ScaledDrawable;
 import net.vector.megabreakertools.crafting.AnvilRecipe;
-import net.vector.megabreakertools.crafting.ModAnvilRecipe;
-import net.vector.megabreakertools.item.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 public class AnvilRecipeCategory implements IRecipeCategory<AnvilRecipe> {
@@ -35,17 +32,17 @@ public class AnvilRecipeCategory implements IRecipeCategory<AnvilRecipe> {
     }
 
     @Override
-    public RecipeType<AnvilRecipe> getRecipeType() {
+    public @NotNull RecipeType<AnvilRecipe> getRecipeType() {
         return ANVIL_TYPE;
     }
 
     @Override
-    public Component getTitle() {
+    public @NotNull Component getTitle() {
         return Component.literal("Anvil");
     }
 
     @Override
-    public IDrawable getBackground() {
+    public @NotNull IDrawable getBackground() {
         return background;
     }
 

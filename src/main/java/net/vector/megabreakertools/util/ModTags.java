@@ -9,10 +9,14 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> NEEDS_STONE_TOOL = tag("needs_stone_tool");
+        public static final TagKey<Block> INCORRECT_FOR_STONE_TOOL = tag("incorrect_for_stone_tool");
         public static final TagKey<Block> NEEDS_IRON_TOOL = tag("needs_iron_tool");
         public static final TagKey<Block> INCORRECT_FOR_IRON_TOOL = tag("incorrect_for_iron_tool");
         public static final TagKey<Block> NEEDS_DIAMOND_TOOL = tag("needs_diamond_tool");
         public static final TagKey<Block> INCORRECT_FOR_DIAMOND_TOOL = tag("incorrect_for_diamond_tool");
+        public static final TagKey<Block> NEEDS_NETHERITE_TOOL = tag("needs_netherite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NETHERITE_TOOL = tag("incorrect_for_netherite_tool");
 
 
         private static TagKey<Block> tag(String name) {

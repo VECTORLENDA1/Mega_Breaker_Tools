@@ -9,11 +9,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.vector.megabreakertools.crafting.ModAnvilRecipe;
-
+import org.jetbrains.annotations.NotNull;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 @JeiPlugin
 public class JEIMegaBreakerToolsPlugin implements IModPlugin {
@@ -21,7 +20,7 @@ public class JEIMegaBreakerToolsPlugin implements IModPlugin {
     private static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath("megabreakertools", "jei_plugin");
 
     @Override
-    public ResourceLocation getPluginUid() {
+    public @NotNull ResourceLocation getPluginUid() {
         return UID;
     }
 
@@ -34,9 +33,7 @@ public class JEIMegaBreakerToolsPlugin implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        // Instancia ModAnvilRecipe uma única vez para registrar todas as receitas
         new ModAnvilRecipe();
-        // Registra todas as receitas individuais (AnvilRecipe) obtidas do ModAnvilRecipe
         registration.addRecipes(AnvilRecipeCategory.ANVIL_TYPE, new ArrayList<>(ModAnvilRecipe.getRecipes()));
     }
 

@@ -11,6 +11,7 @@ import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.entity.player.AnvilRepairEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.vector.megabreakertools.block.ModBlocks;
 import net.vector.megabreakertools.item.ModItems;
 
 import java.util.Collection;
@@ -31,27 +32,27 @@ public class ModAnvilRecipe {
     }
 
     private void registerRecipes() {
-        registerRecipe(Items.DIRT, ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_SIMPLE_BREAKER.get()), 25, 5);
+        registerRecipe(Item.byBlock(ModBlocks.IGNITHRA_BLOCK.get()), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_SIMPLE_BREAKER.get()), 10, 32);
 
-        registerRecipe(Items.STONE, ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.ADVANCE_BREAKER.get()), 50, 1);
-        registerRecipe(Items.DIRT, ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 1);
-        registerRecipe(Items.DIRT, ModItems.MEGA_SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 1);
+        registerRecipe(Item.byBlock(ModBlocks.IGNITHRA_BLOCK.get()), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.ADVANCE_BREAKER.get()), 50, 15);
+        registerRecipe(Item.byBlock(ModBlocks.IGNITHRA_BLOCK.get()),ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 32);
+        registerRecipe(Item.byBlock(ModBlocks.IGNITHRA_BLOCK.get()), ModItems.MEGA_SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 64);
 
-        registerRecipe(Items.STONE, ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.ULTRA_BREAKER.get()), 60, 1);
-        registerRecipe(Items.DIRT, ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 1);
-        registerRecipe(Items.DIRT, ModItems.MEGA_ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 1);
+        registerRecipe(Item.byBlock(ModBlocks.ASTRALITE_BLOCK.get()), ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.ULTRA_BREAKER.get()), 60, 15);
+        registerRecipe(Item.byBlock(ModBlocks.ASTRALITE_BLOCK.get()), ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 32);
+        registerRecipe(Item.byBlock(ModBlocks.ASTRALITE_BLOCK.get()), ModItems.MEGA_ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 64);
 
-        registerRecipe(Items.STONE, ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.ULTIMATE_BREAKER.get()), 70, 1);
-        registerRecipe(Items.DIRT, ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 1);
-        registerRecipe(Items.DIRT, ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 1);
+        registerRecipe(Item.byBlock(ModBlocks.NEXALITE_BLOCK.get()), ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.ULTIMATE_BREAKER.get()), 70, 15);
+        registerRecipe(Item.byBlock(ModBlocks.NEXALITE_BLOCK.get()), ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 32);
+        registerRecipe(Item.byBlock(ModBlocks.NEXALITE_BLOCK.get()), ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 64);
 
-        registerRecipe(Items.STONE, ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.LEGENDARY_BREAKER.get()), 80, 1);
-        registerRecipe(Items.DIRT, ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 1);
-        registerRecipe(Items.DIRT, ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 1);
+        registerRecipe(Item.byBlock(ModBlocks.CELESTINE_BLOCK.get()), ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.LEGENDARY_BREAKER.get()), 80, 15);
+        registerRecipe(Item.byBlock(ModBlocks.CELESTINE_BLOCK.get()), ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 32);
+        registerRecipe(Item.byBlock(ModBlocks.CELESTINE_BLOCK.get()), ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 64);
 
-        registerRecipe(Items.STONE, ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.ATOMIC_BREAKER.get()), 90, 1);
-        registerRecipe(Items.DIRT, ModItems.ATOMIC_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 1);
-        registerRecipe(Items.DIRT, ModItems.MEGA_LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 1);
+        registerRecipe(Item.byBlock(ModBlocks.ZENITHRA_BLOCK.get()), ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.ATOMIC_BREAKER.get()), 90, 15);
+        registerRecipe(Item.byBlock(ModBlocks.ZENITHRA_BLOCK.get()), ModItems.ATOMIC_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 32);
+        registerRecipe(Item.byBlock(ModBlocks.ZENITHRA_BLOCK.get()), ModItems.MEGA_LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 64);
     }
 
     private void registerRecipe(Item leftItem, Item rightItem, ItemStack result, int cost, int materialCost) {
