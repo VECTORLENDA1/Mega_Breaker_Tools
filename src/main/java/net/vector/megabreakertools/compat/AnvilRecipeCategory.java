@@ -12,26 +12,25 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.vector.megabreakertools.block.ModBlocks;
+import net.minecraft.world.level.block.Blocks;
+import net.vector.megabreakertools.client.ScaledDrawable;
 import net.vector.megabreakertools.crafting.ModAnvilRecipe;
 import net.vector.megabreakertools.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 public class AnvilRecipeCategory implements IRecipeCategory<ModAnvilRecipe> {
 
     public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath("megabreakertools", "anvil");
     public static final RecipeType<ModAnvilRecipe> ANVIL_TYPE = new RecipeType<>(UID, ModAnvilRecipe.class);
+    public static final ResourceLocation TEXTURE =  ResourceLocation.fromNamespaceAndPath("megabreakertools", "textures/gui/anvil_gui.png");
 
     private final IDrawable background;
     private final IDrawable icon;
 
-    public AnvilRecipeCategory(IGuiHelper guiHelper) {
-        // Usa a textura da bigorna original do Minecraft
-        this.background = guiHelper.createDrawable(
-                ResourceLocation.fromNamespaceAndPath("megabreakertools", "textures/gui/slot.png"),
-                0, 0, 125, 38 // Tamanho da interface da bigorna
-        );
-        // Ícone da bigorna
-        this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Items.ANVIL));
+    public AnvilRecipeCategory(IGuiHelper helper) {
+        IDrawable baseBackground = helper.createDrawable(TEXTURE, 0, 0, 125,38);
+        this.background = new ScaledDrawable(baseBackground, 1f);
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Items.ANVIL));
     }
 
     @Override
@@ -55,26 +54,10 @@ public class AnvilRecipeCategory implements IRecipeCategory<ModAnvilRecipe> {
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, ModAnvilRecipe recipe, IFocusGroup focuses) {
+    public void setRecipe(IRecipeLayoutBuilder builder, @NotNull ModAnvilRecipe recipe, @NotNull IFocusGroup focuses) {
         //ADVANCE BREAKER
-        builder.addSlot(RecipeIngredientRole.INPUT, 2, 0).addItemStack(new ItemStack(ModBlocks.CELESTINE_BLOCK.get())); // Slot esquerdo
-        builder.addSlot(RecipeIngredientRole.INPUT, 50, 0).addItemStack(new ItemStack(ModItems.SIMPLE_BREAKER.get())); // Slot direito
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 0).addItemStack(new ItemStack(ModItems.ADVANCE_BREAKER.get())); // Slot de saída
-        //ULTRA BREAKER
-        builder.addSlot(RecipeIngredientRole.INPUT, 2, 50).addItemStack(new ItemStack(ModBlocks.CELESTINE_BLOCK.get())); // Slot esquerdo
-        builder.addSlot(RecipeIngredientRole.INPUT, 50, 50).addItemStack(new ItemStack(ModItems.ADVANCE_BREAKER.get())); // Slot direito
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 50).addItemStack(new ItemStack(ModItems.ULTRA_BREAKER.get())); // Slot de saída
-        //ULTIMATE BREAKER
-        builder.addSlot(RecipeIngredientRole.INPUT, 2, 0).addItemStack(new ItemStack(ModBlocks.CELESTINE_BLOCK.get())); // Slot esquerdo
-        builder.addSlot(RecipeIngredientRole.INPUT, 50, 0).addItemStack(new ItemStack(ModItems.ULTRA_BREAKER.get())); // Slot direito
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 0).addItemStack(new ItemStack(ModItems.ULTIMATE_BREAKER.get())); // Slot de saída
-        //LEGENDARY BREAKER
-        builder.addSlot(RecipeIngredientRole.INPUT, 2, 0).addItemStack(new ItemStack(ModBlocks.CELESTINE_BLOCK.get())); // Slot esquerdo
-        builder.addSlot(RecipeIngredientRole.INPUT, 50, 0).addItemStack(new ItemStack(ModItems.ULTIMATE_BREAKER.get())); // Slot direito
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 0).addItemStack(new ItemStack(ModItems.LEGENDARY_BREAKER.get())); // Slot de saída
-        //ATOMIC BREAKER
-        builder.addSlot(RecipeIngredientRole.INPUT, 2, 0).addItemStack(new ItemStack(ModBlocks.CELESTINE_BLOCK.get())); // Slot esquerdo
-        builder.addSlot(RecipeIngredientRole.INPUT, 50, 0).addItemStack(new ItemStack(ModItems.LEGENDARY_BREAKER.get())); // Slot direito
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 108, 0).addItemStack(new ItemStack(ModItems.ATOMIC_BREAKER.get())); // Slot de saída
+        builder.addSlot(RecipeIngredientRole.INPUT, 5, 5).addItemStack(new ItemStack(Blocks.STONE)); // Slot esquerdo
+        builder.addSlot(RecipeIngredientRole.INPUT, 51, 5).addItemStack(new ItemStack(ModItems.SIMPLE_BREAKER.get())); // Slot direito
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 104, 5).addItemStack(new ItemStack(ModItems.ADVANCE_BREAKER.get())); // Slot de saída
     }
 }

@@ -13,7 +13,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.vector.megabreakertools.block.ModBlocks;
-import net.vector.megabreakertools.compat.JEIMegaBreakerToolsPlugin;
 import net.vector.megabreakertools.item.ModCreativeModTabs;
 import net.vector.megabreakertools.item.ModItems;
 import org.slf4j.Logger;

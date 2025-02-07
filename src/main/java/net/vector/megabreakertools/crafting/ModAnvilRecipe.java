@@ -26,7 +26,6 @@ public class ModAnvilRecipe {
     }
 
     private void registerRecipes() {
-        // Exemplo de registro de receitas
         registerRecipe(Items.DIRT, ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_SIMPLE_BREAKER.get()), 25, 5);
 
         registerRecipe(Items.STONE, ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.ADVANCE_BREAKER.get()), 50, 1);
@@ -48,7 +47,6 @@ public class ModAnvilRecipe {
         registerRecipe(Items.STONE, ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.ATOMIC_BREAKER.get()), 90, 1);
         registerRecipe(Items.DIRT, ModItems.ATOMIC_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 1);
         registerRecipe(Items.DIRT, ModItems.MEGA_LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 1);
-        // Outras receitas podem ser adicionadas aqui...
     }
 
     private void registerRecipe(Item leftItem, Item rightItem, ItemStack result, int cost, int materialCost) {
@@ -69,24 +67,20 @@ public class ModAnvilRecipe {
             return;
         }
 
-        // Busca a receita com base nos itens inseridos na bigorna
         AnvilRecipe recipe = findRecipe(left.getItem(), right.getItem());
         if (recipe != null) {
-            // Verifica qual item é o material e qual é a ferramenta
+
             boolean isLeftMaterial = left.getItem() == recipe.getLeftItem();
             boolean isRightMaterial = right.getItem() == recipe.getRightItem();
 
-            // Determina qual pilha é o material e qual é a ferramenta
             ItemStack materialStack = isLeftMaterial ? left : right;
             ItemStack toolStack = isLeftMaterial ? right : left;
 
-            // Verifica se a quantidade de material é exatamente a necessária
             if (materialStack.getCount() != recipe.getMaterialCost()) {
                 event.setOutput(ItemStack.EMPTY); // Cancela o craft se a quantidade não for exata
                 return;
             }
 
-            // Define o resultado do craft
             ItemStack result = recipe.getResult().copy();
             event.setOutput(result);
             event.setCost(recipe.getCost());
@@ -105,26 +99,22 @@ public class ModAnvilRecipe {
         ItemStack leftStack = anvilContainer.getItem(0);
         ItemStack rightStack = anvilContainer.getItem(1);
 
-        // Recupera a receita para determinar o consumo de materiais
         AnvilRecipe recipe = findRecipe(leftStack.getItem(), rightStack.getItem());
         if (recipe != null && !leftStack.isEmpty() && !rightStack.isEmpty()) {
-            // Verifica qual item é o material e qual é a ferramenta
+
             boolean isLeftMaterial = leftStack.getItem() == recipe.getLeftItem();
             boolean isRightMaterial = rightStack.getItem() == recipe.getRightItem();
 
-            // Determina qual pilha é o material e qual é a ferramenta
             ItemStack materialStack = isLeftMaterial ? leftStack : rightStack;
             ItemStack toolStack = isLeftMaterial ? rightStack : leftStack;
 
-            // Verifica se a quantidade de material é exatamente a necessária
             if (materialStack.getCount() != recipe.getMaterialCost()) {
-                event.setCanceled(true); // Cancela o evento se a quantidade não for exata
+                event.setCanceled(true);
                 return;
             }
 
-            // Consome os itens
-            toolStack.shrink(1); // Consome 1 ferramenta
-            materialStack.shrink(recipe.getMaterialCost()); // Consome a quantidade exata de material
+            toolStack.shrink(1);
+            materialStack.shrink(recipe.getMaterialCost());
 
             anvilContainer.setItem(0, leftStack);
             anvilContainer.setItem(1, rightStack);
