@@ -75,18 +75,6 @@ public class ModAnvilRecipe {
 
         AnvilRecipe recipe = findRecipe(left.getItem(), right.getItem());
         if (recipe != null) {
-
-            boolean isLeftMaterial = left.getItem() == recipe.getLeftItem();
-            boolean isRightMaterial = right.getItem() == recipe.getRightItem();
-
-            ItemStack materialStack = isLeftMaterial ? left : right;
-            ItemStack toolStack = isLeftMaterial ? right : left;
-
-            if (materialStack.getCount() != recipe.getMaterialCost()) {
-                event.setOutput(ItemStack.EMPTY); // Cancela o craft se a quantidade não for exata
-                return;
-            }
-
             ItemStack result = recipe.getResult().copy();
             event.setOutput(result);
             event.setCost(recipe.getCost());
@@ -134,5 +122,3 @@ public class ModAnvilRecipe {
         return RECIPES.getOrDefault(key1, RECIPES.get(key2));
     }
 }
-
-
