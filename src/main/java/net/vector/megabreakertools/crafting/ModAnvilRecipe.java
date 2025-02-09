@@ -5,6 +5,8 @@ import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.entity.player.AnvilRepairEvent;
@@ -31,27 +33,34 @@ public class ModAnvilRecipe {
     }
 
     private void registerRecipes() {
-        registerRecipe(Item.byBlock(ModBlocks.IGNITHRA_BLOCK.get()), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_SIMPLE_BREAKER.get()), 10, 32);
+        //ORES//
+        registerRecipe(Items.NETHERITE_INGOT.asItem(), ModItems.OBSCURIDIUM.get().asItem(), new ItemStack(ModItems.OBSCURITE.get().asItem()), 15, 1);
 
-        registerRecipe(Item.byBlock(ModBlocks.IGNITHRA_BLOCK.get()), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.ADVANCE_BREAKER.get()), 50, 15);
-        registerRecipe(Item.byBlock(ModBlocks.IGNITHRA_BLOCK.get()),ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 32);
-        registerRecipe(Item.byBlock(ModBlocks.IGNITHRA_BLOCK.get()), ModItems.MEGA_SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 64);
 
-        registerRecipe(Item.byBlock(ModBlocks.ASTRALITE_BLOCK.get()), ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.ULTRA_BREAKER.get()), 60, 15);
-        registerRecipe(Item.byBlock(ModBlocks.ASTRALITE_BLOCK.get()), ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 32);
-        registerRecipe(Item.byBlock(ModBlocks.ASTRALITE_BLOCK.get()), ModItems.MEGA_ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 64);
 
-        registerRecipe(Item.byBlock(ModBlocks.NEXALITE_BLOCK.get()), ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.ULTIMATE_BREAKER.get()), 70, 15);
-        registerRecipe(Item.byBlock(ModBlocks.NEXALITE_BLOCK.get()), ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 32);
-        registerRecipe(Item.byBlock(ModBlocks.NEXALITE_BLOCK.get()), ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 64);
 
-        registerRecipe(Item.byBlock(ModBlocks.CELESTINE_BLOCK.get()), ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.LEGENDARY_BREAKER.get()), 80, 15);
-        registerRecipe(Item.byBlock(ModBlocks.CELESTINE_BLOCK.get()), ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 32);
-        registerRecipe(Item.byBlock(ModBlocks.CELESTINE_BLOCK.get()), ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 64);
+        //TOOLS//
+        registerRecipe(Blocks.IRON_BLOCK.asItem(), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_SIMPLE_BREAKER.get()), 15, 32);
 
-        registerRecipe(Item.byBlock(ModBlocks.ZENITHRA_BLOCK.get()), ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.ATOMIC_BREAKER.get()), 90, 15);
-        registerRecipe(Item.byBlock(ModBlocks.ZENITHRA_BLOCK.get()), ModItems.ATOMIC_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 32);
-        registerRecipe(Item.byBlock(ModBlocks.ZENITHRA_BLOCK.get()), ModItems.MEGA_LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 64);
+        registerRecipe((ModBlocks.IGNITHRA_BLOCK.get().asItem()), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.ADVANCE_BREAKER.get()), 50, 15);
+        registerRecipe((ModBlocks.IGNITHRA_BLOCK.get().asItem()),ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 32);
+        registerRecipe((ModBlocks.IGNITHRA_BLOCK.get().asItem()), ModItems.MEGA_SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 64);
+
+        registerRecipe((ModBlocks.ASTRALITE_BLOCK.get().asItem()), ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.ULTRA_BREAKER.get()), 60, 15);
+        registerRecipe((ModBlocks.ASTRALITE_BLOCK.get().asItem()), ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 32);
+        registerRecipe((ModBlocks.ASTRALITE_BLOCK.get().asItem()), ModItems.MEGA_ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTRA_BREAKER.get()), 60, 64);
+
+        registerRecipe((ModBlocks.NEXALITE_BLOCK.get().asItem()), ModItems.ULTRA_BREAKER.get(), new ItemStack(ModItems.ULTIMATE_BREAKER.get()), 70, 15);
+        registerRecipe((ModBlocks.NEXALITE_BLOCK.get().asItem()), ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 32);
+        registerRecipe((ModBlocks.NEXALITE_BLOCK.get().asItem()), ModItems.MEGA_ULTRA_BREAKER.get(), new ItemStack(ModItems.MEGA_ULTIMATE_BREAKER.get()), 70, 64);
+
+        registerRecipe((ModBlocks.CELESTINE_BLOCK.get().asItem()), ModItems.ULTIMATE_BREAKER.get(), new ItemStack(ModItems.LEGENDARY_BREAKER.get()), 80, 15);
+        registerRecipe((ModBlocks.CELESTINE_BLOCK.get().asItem()), ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 32);
+        registerRecipe((ModBlocks.CELESTINE_BLOCK.get().asItem()), ModItems.MEGA_ULTIMATE_BREAKER.get(), new ItemStack(ModItems.MEGA_LEGENDARY_BREAKER.get()), 80, 64);
+
+        registerRecipe((ModBlocks.OBSCURITE_BLOCK.get().asItem()), ModItems.LEGENDARY_BREAKER.get(), new ItemStack(ModItems.ATOMIC_BREAKER.get()), 90, 15);
+        registerRecipe((ModBlocks.OBSCURITE_BLOCK.get().asItem()), ModItems.ATOMIC_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 32);
+        registerRecipe((ModBlocks.OBSCURITE_BLOCK.get().asItem()), ModItems.MEGA_LEGENDARY_BREAKER.get(), new ItemStack(ModItems.MEGA_ATOMIC_BREAKER.get()), 90, 64);
     }
 
     private void registerRecipe(Item leftItem, Item rightItem, ItemStack result, int cost, int materialCost) {
@@ -74,6 +83,17 @@ public class ModAnvilRecipe {
 
         AnvilRecipe recipe = findRecipe(left.getItem(), right.getItem());
         if (recipe != null) {
+            boolean isLeftMaterial = left.getItem() == recipe.getLeftItem();
+            boolean isRightMaterial = right.getItem() == recipe.getRightItem();
+
+            ItemStack materialStack = isLeftMaterial ? left : right;
+            ItemStack toolStack = isLeftMaterial ? right : left;
+
+            if (materialStack.getCount() != recipe.getMaterialCost()) {
+                event.setOutput(ItemStack.EMPTY);
+                return;
+            }
+
             ItemStack result = recipe.getResult().copy();
             event.setOutput(result);
             event.setCost(recipe.getCost());

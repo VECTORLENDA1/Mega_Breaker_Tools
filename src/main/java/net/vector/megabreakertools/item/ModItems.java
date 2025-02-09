@@ -49,40 +49,40 @@ public class ModItems {
     //Mega Tools
     public static final RegistryObject<Item> SIMPLE_BREAKER = ITEMS.register("simple_breaker",
             () -> new SimpleBreakerItem(ModMegaToolTiers.IGNITHRA, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.IGNITHRA, 2, -0.8F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.IGNITHRA, 2, -3.2F))));//defaut - 1 damage, 4 attack speed
     public static final RegistryObject<Item> MEGA_SIMPLE_BREAKER = ITEMS.register("mega_simple_breaker",
             () -> new MegaSimpleBreakerItem(ModMegaToolTiers.IGNITHRA, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.IGNITHRA, 2, -0.8F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.IGNITHRA, 2, -3.2F))));
     public static final RegistryObject<Item> ADVANCE_BREAKER = ITEMS.register("advance_breaker",
             () -> new AdvanceBreakerItem(ModMegaToolTiers.ASTRALITE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.ASTRALITE, 4, -1.3F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.ASTRALITE, 4, -2.8F))));
     public static final RegistryObject<Item> MEGA_ADVANCE_BREAKER = ITEMS.register("mega_advance_breaker",
             () -> new MegaAdvanceBreakerItem(ModMegaToolTiers.ASTRALITE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.ASTRALITE, 4, -1.3F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.ASTRALITE, 4, -2.8F))));
     public static final RegistryObject<Item> ULTRA_BREAKER = ITEMS.register("ultra_breaker",
             () -> new UltraBreakerItem(ModMegaToolTiers.ASTRALITE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.ASTRALITE, 4, -1.3F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.ASTRALITE, 5, -2.2F))));
     public static final RegistryObject<Item> MEGA_ULTRA_BREAKER = ITEMS.register("mega_ultra_breaker",
-            () -> new MegaUltraBreakerItem(ModMegaToolTiers.CELESTINE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.CELESTINE, 5, -1.8F))));
+            () -> new MegaUltraBreakerItem(ModMegaToolTiers.ASTRALITE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.ASTRALITE, 5, -2.2F))));
     public static final RegistryObject<Item> ULTIMATE_BREAKER = ITEMS.register("ultimate_breaker",
             () -> new UltimateBreakerItem(ModMegaToolTiers.CELESTINE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.CELESTINE, 5, -1.8F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.CELESTINE, 7, -1.8F))));
     public static final RegistryObject<Item> MEGA_ULTIMATE_BREAKER = ITEMS.register("mega_ultimate_breaker",
             () -> new MegaUltimateBreakerItem(ModMegaToolTiers.CELESTINE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.CELESTINE, 5, -1.8F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.CELESTINE, 7, -1.8F))));
     public static final RegistryObject<Item> LEGENDARY_BREAKER = ITEMS.register("legendary_breaker",
             () -> new LegendaryBreakerItem(ModMegaToolTiers.OBSCURITE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.OBSCURITE, 8, -2.5F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.OBSCURITE, 9, -1.5F))));
     public static final RegistryObject<Item> MEGA_LEGENDARY_BREAKER = ITEMS.register("mega_legendary_breaker",
             () -> new MegaLegendaryBreakerItem(ModMegaToolTiers.OBSCURITE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.CELESTINE, 8, -2.5F))));
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.CELESTINE, 9, -1.5F))));
     public static final RegistryObject<Item> ATOMIC_BREAKER = ITEMS.register("atomic_breaker",
-            () -> new AtomicBreakerItem(ModMegaToolTiers.OBSCURITE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.OBSCURITE, 8, -2.5F))));
+            () -> new AtomicBreakerItem(ModMegaToolTiers.OBSCURITE, new Item.Properties().fireResistant()
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.OBSCURITE, 11, -1F))));
     public static final RegistryObject<Item> MEGA_ATOMIC_BREAKER = ITEMS.register("mega_atomic_breaker",
-            () -> new MegaAtomicBreakerItem(ModMegaToolTiers.OBSCURITE, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.OBSCURITE, 8, -2.5f))));
+            () -> new MegaAtomicBreakerItem(ModMegaToolTiers.OBSCURITE, new Item.Properties().fireResistant()
+                    .attributes(PickaxeItem.createAttributes(ModMegaToolTiers.OBSCURITE, 11, -1f))));
 
 
 

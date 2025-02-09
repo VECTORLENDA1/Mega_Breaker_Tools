@@ -52,7 +52,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         // MEGA SIMPLE BREAKER //
@@ -81,7 +81,7 @@ public class ModEvents {
 
                 mainHandItem.setDamageValue(initialDamage);
 
-                HARVESTED_BLOCKS.removeAll(blocksToBreak);
+                blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
 
@@ -111,7 +111,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         // MEGA ADVANCE BREAKER//
@@ -140,7 +140,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         //ULTRA BREAKER//
@@ -169,7 +169,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         // MEGA ULTRA BREAKER//
@@ -198,7 +198,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         //ULTIMATE BREAKER//
@@ -227,7 +227,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         // MEGA ULTIMATE BREAKER//
@@ -256,7 +256,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         //LEGENDARY BREAKER//
@@ -285,7 +285,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         // MEGA LEGENDARY BREAKER//
@@ -314,7 +314,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         //ATOMIC BREAKER//
@@ -343,7 +343,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
 
         // MEGA ATOMIC BREAKER//
@@ -372,7 +372,7 @@ public class ModEvents {
 
             mainHandItem.setDamageValue(initialDamage);
 
-            HARVESTED_BLOCKS.removeAll(blocksToBreak);
+            blocksToBreak.forEach(HARVESTED_BLOCKS::remove);
         }
     }
 }
