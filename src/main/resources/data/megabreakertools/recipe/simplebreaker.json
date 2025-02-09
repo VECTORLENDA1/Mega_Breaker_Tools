@@ -6,12 +6,12 @@
       "item": "minecraft:stick"
     },
     "B": {
-      "item": "megabreakertools:astralite_block"
+      "item": "megabreakertools:stone"
     }
   },
   "pattern": [
     "BBB",
-    " # ",
+    "B#B",
     " # "
   ],
   "result": {

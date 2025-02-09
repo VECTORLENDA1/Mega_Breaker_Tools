@@ -40,7 +40,7 @@ public class ModAnvilRecipe {
 
 
         //TOOLS//
-        registerRecipe(Blocks.IRON_BLOCK.asItem(), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_SIMPLE_BREAKER.get()), 15, 32);
+        registerRecipe(Blocks.STONE.asItem(), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.MEGA_SIMPLE_BREAKER.get()), 15, 64);
 
         registerRecipe((ModBlocks.IGNITHRA_BLOCK.get().asItem()), ModItems.SIMPLE_BREAKER.get(), new ItemStack(ModItems.ADVANCE_BREAKER.get()), 50, 15);
         registerRecipe((ModBlocks.IGNITHRA_BLOCK.get().asItem()),ModItems.ADVANCE_BREAKER.get(), new ItemStack(ModItems.MEGA_ADVANCE_BREAKER.get()), 50, 32);
