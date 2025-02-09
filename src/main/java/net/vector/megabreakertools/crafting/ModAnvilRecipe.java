@@ -83,19 +83,26 @@ public class ModAnvilRecipe {
 
         AnvilRecipe recipe = findRecipe(left.getItem(), right.getItem());
         if (recipe != null) {
+            if (recipe.getLeftItem() == Items.NETHERITE_INGOT && recipe.getRightItem() == ModItems.OBSCURIDIUM.get()) {
+                if (left.getCount() != 1 || right.getCount() != 1) {
+                    event.setOutput(ItemStack.EMPTY);
+                    return;
+                }
+
+                ItemStack result = recipe.getResult().copy();
+                event.setOutput(result);
+                event.setCost(recipe.getCost());
+                event.setMaterialCost(1);
+                return;
+            }
+
             boolean isLeftMaterial = left.getItem() == recipe.getLeftItem();
-            boolean isRightMaterial = right.getItem() == recipe.getRightItem();
-
             ItemStack materialStack = isLeftMaterial ? left : right;
-            ItemStack toolStack = isLeftMaterial ? right : left;
-
             if (materialStack.getCount() != recipe.getMaterialCost()) {
                 event.setOutput(ItemStack.EMPTY);
                 return;
             }
-
-            ItemStack result = recipe.getResult().copy();
-            event.setOutput(result);
+            event.setOutput(recipe.getResult().copy());
             event.setCost(recipe.getCost());
             event.setMaterialCost(recipe.getMaterialCost());
         } else {

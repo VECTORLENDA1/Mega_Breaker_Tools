@@ -9,14 +9,18 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> NEEDS_STONE_TOOL = tag("needs_stone_tool");
-        public static final TagKey<Block> INCORRECT_FOR_STONE_TOOL = tag("incorrect_for_stone_tool");
-        public static final TagKey<Block> NEEDS_IRON_TOOL = tag("needs_iron_tool");
-        public static final TagKey<Block> INCORRECT_FOR_IRON_TOOL = tag("incorrect_for_iron_tool");
-        public static final TagKey<Block> NEEDS_DIAMOND_TOOL = tag("needs_diamond_tool");
-        public static final TagKey<Block> INCORRECT_FOR_DIAMOND_TOOL = tag("incorrect_for_diamond_tool");
-        public static final TagKey<Block> NEEDS_NETHERITE_TOOL = tag("needs_netherite_tool");
-        public static final TagKey<Block> INCORRECT_FOR_NETHERITE_TOOL = tag("incorrect_for_netherite_tool");
+        public static final TagKey<Block> NEEDS_IGNITHRA_TOOL = tag("needs_ignithra_tool");
+        public static final TagKey<Block> INCORRECT_FOR_IGNITHRA_TOOL = tag("incorrect_for_ignithra_tool");
+        public static final TagKey<Block> NEEDS_ASTRALITE_TOOL = tag("needs_astralite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NEEDS_ASTRALITE_TOOL = tag("incorrect_for_astralite_tool");
+        public static final TagKey<Block> NEEDS_NEXALITE_TOOL = tag("needs_nexalite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NEEDS_NEXALITE_TOOL = tag("incorrect_for_nexalite_tool");
+        public static final TagKey<Block> NEEDS_CELESTINE_TOOL = tag("needs_celestine_tool");
+        public static final TagKey<Block> INCORRECT_FOR_CELESTINE_TOOL = tag("incorrect_for_celestine_tool");
+        public static final TagKey<Block> NEEDS_ZENITHRA_TOOL = tag("needs_zenithra_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NEEDS_ZENITHRA_TOOL = tag("incorrect_for_zenithra_tool");
+        public static final TagKey<Block> NEEDS_OBSCURITE_TOOL = tag("needs_obscurite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_OBSCURITE_TOOL = tag("incorrect_for_obscurite_tool");
 
 
         private static TagKey<Block> tag(String name) {
