@@ -3,11 +3,15 @@ package net.vector.megabreakertools.compat;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -53,8 +57,30 @@ public class AnvilRecipeCategory implements IRecipeCategory<AnvilRecipe> {
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, @NotNull AnvilRecipe recipe, @NotNull IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 5, 5).addItemStack(new ItemStack(recipe.getLeftItem()));
-        builder.addSlot(RecipeIngredientRole.INPUT, 51, 5).addItemStack(new ItemStack(recipe.getRightItem()));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 104, 5).addItemStack(recipe.getResult());
+        builder.addSlot(RecipeIngredientRole.INPUT, 2, 2).addItemStack(new ItemStack(recipe.getLeftItem()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 49, 2).addItemStack(new ItemStack(recipe.getRightItem()));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 107, 2).addItemStack(recipe.getResult());
+    }
+
+    @Override
+    public void draw(AnvilRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+        Font font = Minecraft.getInstance().font;
+
+        String itemsNeeded = " " + recipe.getItemsRequired();
+        String xpNeeded = "Enchantment Cost: " + recipe.getExperienceRequired();
+
+        int leftSlotX = 4;
+        int leftSlotY = 13;
+
+
+        int rightSlotX = 17;
+        int rightSlotY = 28;
+
+
+        guiGraphics.pose().pushPose();
+        guiGraphics.pose().translate(0, 0, 200);
+        guiGraphics.drawString(font, itemsNeeded, leftSlotX, leftSlotY, 0xFFFFFF, true);
+        guiGraphics.drawString(font, xpNeeded, rightSlotX, rightSlotY, 5635925, true);
+        guiGraphics.pose().popPose();
     }
 }

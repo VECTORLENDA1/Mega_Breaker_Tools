@@ -37,4 +37,12 @@ public class AnvilRecipe {
     public int getMaterialCost() {
         return materialCost;
     }
+
+    public int getItemsRequired() {
+        return materialCost;
+    }
+
+    public int getExperienceRequired() {
+        return cost;
+    }
 }
