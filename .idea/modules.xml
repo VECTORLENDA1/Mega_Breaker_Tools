@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Mega_Breaker_Tools.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Mega_Breaker_Tools.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Mega_Breaker_Tools.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Mega_Breaker_Tools.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/src.iml" filepath="$PROJECT_DIR$/src/src.iml" />
     </modules>
   </component>
