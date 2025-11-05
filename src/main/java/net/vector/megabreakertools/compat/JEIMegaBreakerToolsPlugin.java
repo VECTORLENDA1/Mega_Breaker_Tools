@@ -6,9 +6,6 @@ import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.vector.megabreakertools.crafting.ModAnvilRecipe;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -26,20 +23,15 @@ public class JEIMegaBreakerToolsPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-        registration.addRecipeCategories(
-                new AnvilRecipeCategory(registration.getJeiHelpers().getGuiHelper())
-        );
+
     }
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        new ModAnvilRecipe();
-        registration.addRecipes(AnvilRecipeCategory.ANVIL_TYPE, new ArrayList<>(ModAnvilRecipe.getRecipes()));
-    }
+     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(Items.ANVIL), AnvilRecipeCategory.ANVIL_TYPE);
     }
 }
 

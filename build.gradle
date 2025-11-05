@@ -5,7 +5,6 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
-    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = mod_version
@@ -165,22 +164,9 @@ dependencies {
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
 }
 
-mixin {
-    // MixinGradle Settings
-    add sourceSets.main, 'mixins.mymod.refmap.json'
-    config 'megabreakertools.mixins.json'
 
-    debug.verbose = true
-    debug.export = true
-}
 
-mixin {
-    // AP Settings
-    disableTargetValidator = true
-    overwriteErrorLevel = 'error'
-    quiet
-    extraMappings file("my_custom_srgs.tsrg")
-}
+
 
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
